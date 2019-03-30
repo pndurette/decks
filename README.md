@@ -36,7 +36,7 @@ Then head to http://localhost:9000.
 ### Uploading ☝️
 
 ```bash
-aws s3 sync $DECK_NANME s3://decks.pierre-nick.com/$DECK_NAME
+aws s3 sync $DECK_NAME s3://decks.pierre-nick.com/$DECK_NAME
 ```
 
 See [infra](infra/README.md).
