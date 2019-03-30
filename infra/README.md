@@ -19,8 +19,8 @@ This will:
 ### 2. Upload a deck
 
 ```bash
-$ DECK_DIR=some_deck_dir
-$ aws s3 sync $DECK_DIR s3://cv.pierre-nick.com/$DECK_DIR 
+$ DECK_NAME=some_deck_dir
+$ aws s3 sync $DECK_NAME s3://decks.pierre-nick.com/$DECK_NAME
 ```
 
 ### 3. Configure DNS
