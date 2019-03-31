@@ -23,6 +23,49 @@ Note:
 
 # What is Spinnaker?
 
+![Spinnaker Logo](content/spinnaker.png "Spinnaker Logo") <!-- .element: class="plain" -->  
+
+
+## Timeline
+- 2010: Netflix creates Asgard
+- 2012: Netflix open-sources Asgard
+- 2014: Netflix creates Spinnaker
+- **2015: Netflix open-sources Spinnaker (AWS & GCP)**  <!-- .element: style="color: #4699B1" --> 
+
+Note:
+* Asgard:
+  * Made for AWS
+  * Forked for other clouds
+  * No CD workflow
+* Spinnaker:
+  * Support platforms: AWS, GCP at launch.
+  * Pipelines
+  * 'Baking'
+
+
+  
+## Suported platforms
+
+<span class="fragment fade-in-then-semi-out">Amazon Web Services (EC2,</span>
+<span class="fragment fade-in-then-semi-out">ECS,</span>
+<span class="fragment fade-in-then-semi-out">Lambda), </span>
+<span class="fragment fade-in-then-semi-out">Azure (VM), </span>
+<span class="fragment fade-in-then-semi-out">Cloud Foundry,</span>
+<span class="fragment fade-in-then-semi-out">DC/OS,</span>
+<span class="fragment fade-in-then-semi-out">Google Cloud Platform (Compute,</span>
+<span class="fragment fade-in-then-semi-out">AppEngine), </span>
+<span class="fragment fade-in-then-semi-out">Kubernetes (any),</span>
+<span class="fragment fade-in-then-semi-out">OpenStack,</span>
+<span class="fragment fade-in-then-semi-out">Oracle Cloud</span>
+
+
+## 1. App Management
+
+
+## 2. App Deployment
+- CD (but not CI!)
+- *Integrates* with CI: Travis, Jenkins, Google Cloud Build, Wercker
+
 Note:
 	1. Short history (Netflix, replaces Asgard—now all clouds on board)
 	2. CD (but not CI) 
@@ -33,7 +76,7 @@ Note:
 
 
 
-# Getting into Spinnaker
+# Getting Spinnaker
 
 Note:
 	1. Installation ways
