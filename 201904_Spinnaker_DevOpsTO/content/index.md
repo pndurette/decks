@@ -23,7 +23,10 @@ Note:
 
 # What is Spinnaker?
 
-![Spinnaker Logo](content/spinnaker.png "Spinnaker Logo") <!-- .element: class="plain" -->  
+![Spinnaker Logo](content/spinnaker.png "Spinnaker Logo") <!-- .element: class="plain" -->
+
+
+*<i class="fas fa-quote-left"></i> Spinnaker is an open source, multi-cloud continuous delivery platform for releasing software changes with high velocity and confidence. <i class="fas fa-quote-right"></i>* – [spinnaker.io](https://www.spinnaker.io) 
 
 
 ## Timeline
@@ -33,24 +36,25 @@ Note:
 - **2015: Netflix open-sources Spinnaker (AWS & GCP)**  <!-- .element: style="color: #4699B1" --> 
 
 Note:
-* Asgard:
-  * Made for AWS
+* Asgard (AWS)
+  * AWS Console wasn't mature 
+  * Manage dev access (instead of keys)
   * Forked for other clouds
   * No CD workflow
-* Spinnaker:
-  * Support platforms: AWS, GCP at launch.
-  * Pipelines
+* Spinnaker (AWS & GCP at launch)
+  * Multicloud
+  * CD Pipelines
   * 'Baking'
 
 
-  
-## Suported platforms
+## 2019: Suported platforms
 
 <span class="fragment fade-in-then-semi-out">Amazon Web Services (EC2,</span>
 <span class="fragment fade-in-then-semi-out">ECS,</span>
 <span class="fragment fade-in-then-semi-out">Lambda), </span>
 <span class="fragment fade-in-then-semi-out">Azure (VM), </span>
-<span class="fragment fade-in-then-semi-out">Cloud Foundry,</span>
+<span class="fragment fade-in-then-semi-out">Cloud Foundry </span>
+<span class="fragment fade-in-then-semi-out">(e.g. IBM Cloud),</span>
 <span class="fragment fade-in-then-semi-out">DC/OS,</span>
 <span class="fragment fade-in-then-semi-out">Google Cloud Platform (Compute,</span>
 <span class="fragment fade-in-then-semi-out">AppEngine), </span>
@@ -59,32 +63,30 @@ Note:
 <span class="fragment fade-in-then-semi-out">Oracle Cloud</span>
 
 
-## 1. App Management
+## Two Core Features Sets
 
+### Infrastructure (Application Management)
 
-## 2. App Deployment
-- CD (but not CI!)
-- *Integrates* with CI: Travis, Jenkins, Google Cloud Build, Wercker
+<span class="fragment fade-in-then-semi-out">View all clouds, accounts & regions for an app at-a-glance. </span>
+<span class="fragment fade-in-then-semi-out">Contextual management replaces the consoles of each cloud. </span>
+<span class="fragment fade-in-then-semi-out">Spinnaker doesn't store infrastructure state, it reads it from the clouds. </span>
 
-Note:
-	1. Short history (Netflix, replaces Asgard—now all clouds on board)
-	2. CD (but not CI) 
-		1. Integrates with CI however (triggers, steps)
-	3. Multi-Cloud
-	4. Best Practices — Very opinionated, in a good way
-		1. Deployment strategies 
+### Pipelines (Application Deployment)
 
-
-
-# Getting Spinnaker
-
-Note:
-	1. Installation ways
-	2. (Included a playground!)
+<span class="fragment fade-in-then-semi-out">Create and manage delivery workflow pipelines. </span>
+<span class="fragment fade-in-then-semi-out">CD, not CI: integrate with CI.  </span>
+<span class="fragment fade-in-then-semi-out">Pipeline-as-code, templating. </span>
 
 
 
-# Concepts
+# Infrastructure
+
+
+## Concepts
+
+|Spinnaker|AWS|GCP|Azure|Kubernetes|
+|--|--|--|--|--|
+|a|b|c|d|e|
 
 Note:
 	1. Convention over configuration
@@ -96,6 +98,9 @@ Note:
 		4. Load Balancers
 		5. Firewalls
 	4. Stack, Detail
+    	4. Best Practices — Very opinionated, in a good way
+		1. Deployment strategies 
+
 
 
 
@@ -111,12 +116,45 @@ Note:
 
 # Pipelines
 
+As of early 2019:
+
+roer (v1)
+spin (v2)
+heading towards Jsonet 
+https://github.com/spinnaker/spinnaker/tree/master/sponnet
+
 Note:
 	1. Steps
 		1. Bakery
 		2. Deploy
 	2. SpEL
 
+
+
+# Production-ize
+
+
+Auth/Authz
+Metrics / Logging
+Scaling
+
+
+# Installing
+
+
+
+Note:
+	1. Installation ways
+	2. (Included a playground!)
+
+
+
+
+# Governance
+
+New CD foundation
+
+Dev is fast and things change, docs don't always follow (esp. in template/pipelines)
 
 
 # Thank you!
@@ -131,3 +169,11 @@ Note:
 	3. App control management
 	4. Deploy strategies
 	5. Canaries
+    halyard reference
+    spin reference
+
+    Videos:
+        Google Cloud Next '18: Large-Scale Continuous Delivery at Netflix and Waze Using Spinnaker:
+        https://cloud.withgoogle.com/next18/sf/sessions/session/155951
+
+# Screenshots
