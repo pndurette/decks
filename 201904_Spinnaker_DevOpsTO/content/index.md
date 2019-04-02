@@ -197,6 +197,9 @@ Note:
 * Manual Judgement
 
 
+<!-- .slide: data-background-color="white" data-background-image="content/pipeline_newer_example.png" data-background-size="contain" -->
+
+
 ### Pipeline Expressions
 
 An extremely powerful scripting (SpEL) language that can be used in almost any text field, with auto-complete.
