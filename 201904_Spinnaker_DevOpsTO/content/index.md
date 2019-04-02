@@ -303,16 +303,3 @@ Still a WIP (but very promising):
 * Monitoring: Datadog, Prometheus, Stackdriver
 * Notifications
 * User Data
-
-Note:
-	1. Microservices
-	2. API
-	3. App control management
-	4. Deploy strategies
-	5. Canaries
-    halyard reference
-    spin reference
-
-    Videos:
-        Google Cloud Next '18: Large-Scale Continuous Delivery at Netflix and Waze Using Spinnaker:
-        https://cloud.withgoogle.com/next18/sf/sessions/session/155951
