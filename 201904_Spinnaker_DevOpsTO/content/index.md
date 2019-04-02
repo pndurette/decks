@@ -172,34 +172,34 @@ Note:
 
 ### Triggers (examples)
 
-* Jenkins, Travis, Wercker, GCP Cloud Build
-  * Passes data/metadata that can be used
-* Docker Registry Change
-  * Can also do regex match on tag
-* GCP Pub/Sub
-* Webhook
-* Another pipeline
-* GitHub, GitLab, BitBucket
-* CRON
+* Jenkins, Travis, Wercker, GCP Cloud Build <!-- .element: class="fragment" data-fragment-index="1" -->
+  * Passes data/metadata that can be used <!-- .element: class="fragment" data-fragment-index="1" -->
+* Docker Registry Change <!-- .element: class="fragment" data-fragment-index="2" -->
+  * Can also do regex match on tag <!-- .element: class="fragment" data-fragment-index="2" -->
+* GCP Pub/Sub <!-- .element: class="fragment" data-fragment-index="3" -->
+* Webhook <!-- .element: class="fragment" data-fragment-index="4" -->
+* Another pipeline <!-- .element: class="fragment" data-fragment-index="5" -->
+* GitHub, GitLab, BitBucket <!-- .element: class="fragment" data-fragment-index="6" -->
+* CRON <!-- .element: class="fragment" data-fragment-index="7" -->
 
 
 ### Steps (examples)
 
-* Jenkins
-  * Can trigger Jenkins as a step and wait (or not) for completion
-* Bakery
-  * 'Bake' machine images (using HashiCorp Packer)
-  * 'Render' Helm charts (for Kubernetes)
-* Deploy
-  * Can deploy to many clusters at once
-* Any cloud operation (contextual to provider)
-  * Disable cluster, Shrink cluster..
-* Manual Judgement
+* Jenkins <!-- .element: class="fragment" data-fragment-index="1" -->
+  * Can trigger jobs as a step and wait (or not) for completion <!-- .element: class="fragment" data-fragment-index="1" -->
+* Bakery <!-- .element: class="fragment" data-fragment-index="2" -->
+  * 'Bake' machine images (using HashiCorp Packer) <!-- .element: class="fragment" data-fragment-index="2" -->
+  * 'Render' Helm charts (for Kubernetes) <!-- .element: class="fragment" data-fragment-index="2" -->
+* Deploy <!-- .element: class="fragment" data-fragment-index="3" -->
+  * Strategies e.g. Blue/Green, Rolling, Canary.. <!-- .element: class="fragment" data-fragment-index="3" -->
+* Any cloud operation (contextual to provider) <!-- .element: class="fragment" data-fragment-index="4" -->
+  * Disable cluster, Shrink cluster.. <!-- .element: class="fragment" data-fragment-index="4" -->
+* Manual Judgement <!-- .element: class="fragment" data-fragment-index="5" -->
 
 
 ### Pipeline Expressions
 
-An extremely powerful scripting (SpEL) language that can be used in almost any text field, with auto-complete.
+An extremely powerful expression language (SpEL) that can be used in almost any text field, with auto-completion.
 
 Note:
 Spring Expression Language (SpEL).
@@ -238,13 +238,6 @@ Still a WIP (but very promising):
 # The Project
 
 
-## Installing
-
-* Ubuntu VM <i class="fab fa-ubuntu"></i>
-* Kubernetes (Helm Chart) <i class="fas fa-anchor"></i>
-* *spinnaker-playground* <i class="far fa-hand-peace"></i><br/>https://github.com/pndurette/spinnaker-playground<br/>Local lightweight install — by me!
-
-
 ## Governance
 
 <!-- .slide: data-background-color="white" -->
@@ -253,6 +246,13 @@ Still a WIP (but very promising):
 
 ![CDF logo](content/cd_foundation_logo.png "CDF logo") <!-- .element class="plain" style="width:20%; margin:0;" -->
 ![CDF Projects](content/cd_foundation_projects.png "CDF Projects") <!-- .element: class="plain" -->
+
+
+## Installing
+
+* Ubuntu VM <i class="fab fa-ubuntu"></i>
+* Kubernetes (Helm Chart) <i class="fas fa-anchor"></i>
+* *spinnaker-playground* <i class="far fa-hand-peace"></i><br/>https://github.com/pndurette/spinnaker-playground<br/>Local lightweight install — by me!
 
 
 
