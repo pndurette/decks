@@ -15,7 +15,7 @@ mkdir ${DECK_NAME}
 # Using RevealJS https://github.com/hakimel/reveal.js
 REVEAL_REPO="https://github.com/hakimel/reveal.js.git"
 REVEAL_FILES=( css js lib plugin index.html )
-REVEAL_VERS="3.7.0"
+REVEAL_VERS="3.9.2"
 
 # Save version of RevealJS for doc. reference
 echo ${REVEAL_VERS} > ${DECK_NAME}/version.txt
