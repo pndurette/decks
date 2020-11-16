@@ -14,8 +14,8 @@ mkdir ${DECK_NAME}
 
 # Using RevealJS https://github.com/hakimel/reveal.js
 REVEAL_REPO="https://github.com/hakimel/reveal.js.git"
-REVEAL_FILES=( css js lib plugin index.html )
-REVEAL_VERS="3.9.2"
+REVEAL_FILES=( dist js plugin index.html )
+REVEAL_VERS="4.1.0"
 
 # Save version of RevealJS for doc. reference
 echo ${REVEAL_VERS} > ${DECK_NAME}/version.txt
@@ -41,7 +41,7 @@ echo ">>> Adding base content and docs..."
 CONTENT_DIR="${DECK_NAME}/content" && mkdir -p ${CONTENT_DIR}
 
 # Example Markdown file
-echo "
+tee ${CONTENT_DIR}/index.md <<EOF
 # Slide 1a
 
 first slide A
@@ -56,7 +56,7 @@ first slide B
 # Slide 2
 
 second slide
-" > ${CONTENT_DIR}/index.md
+EOF
 
 # Example Readme
 echo "# ${DECK_NAME}" > ${DECK_NAME}/README.md
@@ -67,13 +67,14 @@ echo ">>> Be sure to modify the following in ${DECK_NAME}/index.html:
 
 1. Change the <title>.
 
-2. Change the theme (<link rel='stylesheet' href='css/theme/black.css'>)
+2. Change the theme (<link rel='stylesheet' href='dist/theme/black.css'>)
 
 3. Load the external markdown.
    Change the whole <div class='reveal'> to:
+   (or add <section> to other <sections> under .sides)
 
 <div class='reveal'>
-    <div class='slides'>
+	<div class='slides'>
         <section data-markdown='content/index.md'
                  data-separator='^\n\n\n'
                  data-separator-vertical='^\n\n'
@@ -83,5 +84,5 @@ echo ">>> Be sure to modify the following in ${DECK_NAME}/index.html:
     </div>
 </div>
 
-4. Change configuration (Reveal.initialize)
+4. Change configuration as needed (Reveal.initialize)
 "
