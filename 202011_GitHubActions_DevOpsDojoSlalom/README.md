@@ -1,1 +1,1 @@
-# 202011_GitHubActions_DojoWithRenan
+# 202011_GitHubActions_DevOpsDojoSlalom

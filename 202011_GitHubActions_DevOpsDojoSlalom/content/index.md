@@ -9,10 +9,31 @@
 
 ### Agenda
 
+* <i class="fas fa-code"></i> What is GitHub Actions?
 * <i class="fas fa-search"></i> Anatomy of a GitHub Actions Workflow
 * <i class="fas fa-shoe-prints"></i> Workflow Steps
 * <i class="fas fa-running"></i> Real-World Example Workflow
 * <i class="fas fa-external-link-alt"></i> Resources
+
+
+
+## But First! <i class="fas fa-angle-double-down"></i>
+
+
+### What is a CI/CD tool?
+
+e.g. _Circle CI, Travis CI, GitLab CI/CD, Jenkins, Bamboo..._
+
+<span class="fragment fade-in">Tools typically used to</span> <span class="fragment fade-in">build,</span> <span class="fragment fade-in">test </span> <span class="fragment fade-in"> & deploy software.</span>
+
+#### <span class="fragment fade-in">They run</span> <span class="fragment fade-in-then-semi-out">_pipelines_</span> <span class="fragment fade-in">triggered by </span> <span class="fragment fade-in-then-semi-out">_events_</span> <br/><span class="fragment fade-in">(e.g. code pushes, code merges, tags..)</span>
+
+
+### What is GitHub Actions?
+
+<span class="fragment fade-in-then-semi-out">GitHub is a platform that provides hosted software version control based on Git,</span> <span class="fragment fade-in-then-semi-out">offering code reviewing,</span> <span class="fragment fade-in-then-semi-out">branch management,</span> <span class="fragment fade-in-then-semi-out">issue tracking & feature requests, </span> <span class="fragment fade-in-then-semi-out">task & project management,</span> <span class="fragment fade-in-then-semi-out">package & image repositories,</span> <span class="fragment fade-in-then-semi-out">documentation hosting,</span> <span class="fragment fade-in-then-semi-out">blogs, and more!</span>
+
+#### <span class="fragment fade-in">GitHub Actions also runs</span> <span class="fragment fade-in-then-semi-out">_pipelines_</span> <span class="fragment fade-in-then-semi-out">_(workflows)_</span><span class="fragment fade-in"> triggered by</span> <span class="fragment fade-in-then-semi-out">_events_</span> <br/><span class="fragment fade-in">(i.e. <u>anything</u> on GitHub)</span>
 
 
 
