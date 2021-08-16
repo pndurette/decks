@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Hello, world!</title>
+    <title>decks.pierre-nick.com</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content="" />
@@ -16,6 +16,18 @@
     <meta name="twitter:title" content="">
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content=""> -->
+
+    <!-- Google Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+    
+    ga('create', '{{gtag}}', 'auto');
+    ga('send', 'pageview');
+    </script>
+    <!-- End Google Analytics -->
 </head>
 
 <body>
@@ -23,8 +35,9 @@
     <ul>
         {{#decks}}
         <li>
-            <b>{{date}}</b> — <a href="{{slides}}">{{name}}</a>
-            {{#event}}(<a href="{{url}}">{{name}}</a>) {{#video}}[<a href="{{video}}">Watch</a>]{{/video}} {{#audio}}[<a href="{{audio}}">Listen</a>]{{/audio}}{{/event}}
+            <b>{{date}}</b> — <a href="{{slides_href}}">{{name}}</a>
+            {{#event}}(<a href="{{url}}">{{name}}</a>){{/event}} 
+            {{#video_href}}[<a href="{{video_href}}">Watch</a>]{{/video_href}} {{#audio_href}}[<a href="{{audio_href}}">Listen</a>]{{/audio_href}}
         </li>
         {{/decks}}
     </ul>
