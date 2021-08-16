@@ -62,8 +62,9 @@ jobs:
       - name: Upload CV to Google Cloud Storage
         uses: google-github-actions/upload-cloud-storage@main
         with:
-          path: index/*
+          path: index
           destination: decks.pierre-nick.com
+          parent: false
 
       - name: Purge Cloudflare Cache
         uses: nathanvaughn/actions-cloudflare-purge@v2.0.0
