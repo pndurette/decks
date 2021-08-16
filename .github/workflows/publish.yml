@@ -3,10 +3,10 @@ name: Site Build
 on:
   pull_request:
     branches: [ main ]
-    paths: [ 'decks/**', 'index/index.yml' ]
+    paths: [ 'decks/**', 'index/**', 'index.json' ]
   push:
     branches: [ main ]
-    paths: [ 'decks/**', 'index/index.yml' ]
+    paths: [ 'decks/**', 'index/**', 'index.json' ]
 
   # Allows you to run this workflow manually
   workflow_dispatch:
