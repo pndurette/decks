@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Decks Schema",
+  "description": "JSON Schema definition for PN's Decks",
+  "required": [
+    "gtag",
+    "decks"
+  ],
+  "type": "object",
+  "properties": {
+    "gtag": {
+      "type": "string",
+      "description": "Google Analytics gtag"
+    },
+    "decks": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/deck"
+      }
+    }
+  },
+  "$defs": {
+    "deck": {
+      "type": "object",
+      "description": "A presentation (deck)",
+      "required": [
+        "name",
+        "date",
+        "event"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the presentation"
+        },
+        "date": {
+          "type": "string",
+          "description": "The date of the presentation (YYYY-MM)",
+          "pattern": "^[0-9]{4}-[0-9]{2}$"
+        },
+        "event": { "$ref": "#/$defs/event" },
+        "slides_href": {
+          "type": "string",
+          "description": "href to slides"
+        },
+        "video_href": {
+          "type": "string",
+          "description": "href to video"
+        },
+        "audio_href": {
+          "type": "string",
+          "description": "href to audio"
+        },
+        "featured": {
+          "type": "boolean"
+        }
+      }
+    },
+    "event": {
+      "type": "object",
+      "description": "An event associated with a deck",
+      "required": [
+        "name",
+        "url"
+      ],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the event"
+        },
+        "url": {
+          "type": "string",
+          "description": "The url of the event"
+        }
+      }
+    }
+  }
+}

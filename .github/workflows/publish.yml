@@ -1,0 +1,74 @@
+name: Site Build
+
+on:
+  pull_request:
+    branches: [ main ]
+    paths: [ 'decks/**', 'index/index.yml' ]
+  push:
+    branches: [ main ]
+    paths: [ 'decks/**', 'index/index.yml' ]
+
+  # Allows you to run this workflow manually
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install Chevron
+        run: pip install chevron
+
+        # Create index from template
+        # (sort 'decks' by date descending first)
+      - name: Hydrate Template
+        run: |
+           jq '.decks |= (sort_by(.date) | reverse)' index.json > desc.json
+           chevron -d desc.json index/index.mustache.html > index/index.html
+           cp -r decks/* index/
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: site
+          path: index
+
+  publish:
+    if: github.event_name == 'push'
+    needs: [ build ]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: site
+
+      - name: Set up Google Cloud SDK
+        uses: google-github-actions/setup-gcloud@master
+        with:
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          export_default_credentials: true
+
+      - name: Upload CV to Google Cloud Storage
+        uses: google-github-actions/upload-cloud-storage@main
+        with:
+          path: index/*
+          destination: decks.pierre-nick.com
+
+      - name: Purge Cloudflare Cache
+        uses: nathanvaughn/actions-cloudflare-purge@v2.0.0
+        if: success()
+        with:
+          cf_zone: ${{ secrets.CLOUDFLARE_ZONE }}
+          cf_auth: ${{ secrets.CLOUDFLARE_AUTH_KEY }}
+          urls: "https://decks.pierre-nick.com/"
