@@ -51,6 +51,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: site
+          path: site
 
       - name: Set up Google Cloud SDK
         uses: google-github-actions/setup-gcloud@master
@@ -59,12 +60,10 @@ jobs:
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
 
-      - run: ls -lah
-
       - name: Upload Decks to Google Cloud Storage
         uses: google-github-actions/upload-cloud-storage@main
         with:
-          path: index
+          path: site
           destination: decks.pierre-nick.com
           parent: false
 
